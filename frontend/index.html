@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STOCK-IN-A-BOX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            madeiraClara: "#e4c6a0",
+            madeiraEscura: "#8a6240",
+            marromAvermelhado: "#a34d2e",
+            pretoProfundo: "#1e1e1e",
+            begeEnvelhecido: "#d6bfa7",
+            vermelhoEscuro: "#6a1d1b",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-pretoProfundo text-begeEnvelhecido">
+
+  <!-- Header -->
+  <header class="p-4 bg-pretoProfundo flex justify-between items-center border-b border-madeiraEscura">
+    <h1 class="text-3xl font-bold text-madeiraClara">STOCK-IN-A-BOX</h1>
+    <nav>
+      <ul class="flex gap-6 text-begeEnvelhecido">
+        <li><a href="#" onclick="carregarPagina('landingPage')" class="hover:text-marromAvermelhado">Início</a></li>
+        <li><a href="#" onclick="carregarPagina('history')" class="hover:text-marromAvermelhado">Sobre</a></li>
+        <li><a href="#" onclick="carregarPagina('donates')" class="hover:text-marromAvermelhado">Vendas</a></li>
+        <li><a href="#" onclick="carregarPagina('joinus')" class="hover:text-marromAvermelhado">Trabalhe conosco</a></li>
+        <li><a href="#" onclick="carregarPagina('contact')" class="hover:text-marromAvermelhado">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="p-6"></main>
+
+  <script>
+    function carregarPagina(pagina) {
+      fetch(`${pagina}.html`)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('conteudo').innerHTML = html;
+          window.scrollTo(0, 0);
+        })
+        .catch(() => {
+          document.getElementById('conteudo').innerHTML =
+            '<p class="p-6 text-vermelhoEscuro">Erro ao carregar a página.</p>';
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => carregarPagina('landingPage'));
+
+    const slides = [
+      {
+        title: "Lorem Ipsum",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et nisi nec justo finibus tempor."
+      },
+      {
+        title: "dolor sit",
+        text: " Curabitur et nisi nec justo finibus tempor."
+      },
+      {
+        title: "amet",
+        text: " consectetur adipiscing elit."
+      }
+    ];
+
+    function changeSlide(index) {
+      document.getElementById("carousel-title").innerText = slides[index].title;
+      document.getElementById("carousel-text").innerText = slides[index].text;
+
+      const buttons = document.querySelectorAll(".carousel-btn");
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle("bg-vermelhoEscuro", i === index);
+        btn.classList.toggle("bg-gray-400", i !== index);
+      });
+    }
+  </script>
+
+</body>
+</html>
