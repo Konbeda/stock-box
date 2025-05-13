@@ -21,65 +21,124 @@
       },
     };
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="bg-pretoProfundo text-begeEnvelhecido">
+<body class="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-pretoProfundo text-begeEnvelhecido">
 
   <!-- Header -->
-  <header class="p-4 bg-pretoProfundo flex justify-between items-center border-b border-madeiraEscura">
-    <h1 class="text-3xl font-bold text-madeiraClara">STOCK-IN-A-BOX</h1>
-    <nav>
-      <ul class="flex gap-6 text-begeEnvelhecido">
-        <li><a href="#" onclick="carregarPagina('landingPage')" class="hover:text-marromAvermelhado">Início</a></li>
-        <li><a href="#" onclick="carregarPagina('history')" class="hover:text-marromAvermelhado">Sobre</a></li>
-        <li><a href="#" onclick="carregarPagina('donates')" class="hover:text-marromAvermelhado">Vendas</a></li>
-        <li><a href="#" onclick="carregarPagina('joinus')" class="hover:text-marromAvermelhado">Trabalhe conosco</a></li>
-        <li><a href="#" onclick="carregarPagina('contact')" class="hover:text-marromAvermelhado">Contato</a></li>
-      </ul>
-    </nav>
+  <header class="bg-pretoProfundo py-4 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-4 md:mb-0">
+        <img src="imgs/gestao.png" alt="Stock in Box Logo" style="height: 9rem">
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="text-white hover:text-marromAvermelhado transition"><i class="fab fa-instagram text-2xl"></i></a>
+        <a href="#" class="text-white hover:text-marromAvermelhado transition"><i class="fab fa-facebook-f text-2xl"></i></a>
+        <a href="#" class="text-white hover:text-marromAvermelhado transition"><i class="fab fa-whatsapp text-2xl"></i></a>
+        <a href="#" class="text-white hover:text-marromAvermelhado transition"><i class="fab fa-linkedin-in text-2xl"></i></a>
+      </div>
+    </div>
   </header>
 
-  <main id="conteudo" class="p-6"></main>
+  <!-- Section 1: Hero -->
+  <section class="h-screen w-full snap-start relative bg-cover bg-center" style="background-image: url('imgs/WhatsApp Image 2025-05-06 at 21.07.36.jpeg');">
+    <div class="absolute inset-0 bg-black bg-opacity-90"></div>
+    <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Conheça os nossos serviços</h1>
+      <p class="text-white max-w-xl text-lg">Mais do que uma ferramenta de gestão, a Estoque na Caixa é uma aliada na performance do seu negócio.</p>
+      <a href="#section2" class="mt-8 px-8 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition">Conheça</a>
+    </div>
+  </section>
 
+  <!-- Section 2: Cards -->
+  <section id="section2" class="h-screen w-full snap-start bg-[#6ca6e6] text-[#4A2C1A] flex items-center justify-center px-6">
+    <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <img src="imgs/card1.jpeg" alt="Imagem 1" class="w-full h-64 object-cover rounded-2xl mb-4 shadow-md" />
+        <h3 class="text-xl font-bold mb-2">Entregas Rapidas</h3>
+        <p class="text-base" style="color: white;">Com garantia de qualidade</p>
+      </div>
+      <div class="text-center">
+        <img src="imgs/card2.jpeg" alt="Imagem 2" class="w-full h-64 object-cover rounded-2xl mb-4 shadow-md" />
+        <h3 class="text-xl font-bold mb-2">Fácil Comunicação</h3>
+        <p class="text-base" style="color: white;">Entre em contato em nossos canais</p>
+      </div>
+      <div class="text-center">
+        <img src="imgs/card3.jpeg" alt="Imagem 3" class="w-full h-64 object-cover rounded-2xl mb-4 shadow-md" />
+        <h3 class="text-xl font-bold mb-2">Compromisso</h3>
+        <p class="text-base" style="color: white;">Confira nossa avaliação</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Texto com imagem -->
+  <section class="h-screen w-full snap-start bg-[#2b2a28] text-[#e3dad1] flex items-center justify-center px-6">
+    <div class="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
+      <img src="imgs/gestao.png" alt="Gestão de Estoque" class="w-full md:w-1/2 rounded-2xl shadow-lg">
+      <div class="w-full md:w-1/2">
+        <p class="text-lg leading-relaxed mb-6">
+          Na rotina acelerada do varejo e do atacado, a eficiência na gestão de estoques é essencial para manter a competitividade e garantir resultados. A Estoque na Caixa nasce com esse propósito: oferecer às pequenas e médias empresas uma solução tecnológica robusta, prática e confiável para o controle total de seus estoques.
+          <br><br>
+          Nossa plataforma foi desenvolvida para automatizar processos, reduzir erros operacionais e fornecer informações precisas, em tempo real, para decisões mais estratégicas. Com interface intuitiva, integração inteligente e funcionalidades que se adaptam à realidade do seu negócio, colocamos o controle na sua mão — sem complicações.
+          <br><br>
+          Mais do que uma ferramenta de gestão, a Estoque na Caixa é uma aliada na performance do seu negócio. Otimize tempo, evite rupturas, reduza perdas e aumente sua margem de lucro com uma gestão profissional, moderna e centrada em resultados.
+        </p>
+        <p class="text-2xl font-semibold text-[#918f8c] mt-8">Organize. Automatize. Cresça. Com a Estoque na Caixa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Input e envio de e-mail -->
+  <section class="h-screen w-full snap-start relative bg-cover bg-center flex items-center justify-center px-6"
+           style="background-image: url('imgs/site.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
+      <!-- Imagem sobreposta -->
+      <div class="w-full md:w-1/2">
+        <img src="imgs/sobreposta.jpeg" alt="Imagem ilustrativa"
+             class="rounded-2xl shadow-lg w-full max-w-md mx-auto" />
+      </div>
+
+      <!-- Caixa de input + botão -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Receba novidades e atualizações</h2>
+        <form onsubmit="return enviarEmail()" class="flex flex-col sm:flex-row gap-4 max-w-md">
+          <input id="emailInput" type="email" placeholder="E-MAIL"
+                 class="flex-1 px-5 py-3 rounded-full text-pretoProfundo bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-marromAvermelhado transition" />
+          <button type="submit"
+                  class="px-6 py-3 rounded-full bg-marromAvermelhado text-white font-semibold hover:bg-vermelhoEscuro transition">
+            Enviar
+          </button>
+        </form>
+        <p id="mensagemStatus" class="mt-4 text-white text-sm"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de validação -->
   <script>
-    function carregarPagina(pagina) {
-      fetch(`${pagina}.html`)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('conteudo').innerHTML = html;
-          window.scrollTo(0, 0);
-        })
-        .catch(() => {
-          document.getElementById('conteudo').innerHTML =
-            '<p class="p-6 text-vermelhoEscuro">Erro ao carregar a página.</p>';
-        });
+    function validarEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
     }
 
-    window.addEventListener('DOMContentLoaded', () => carregarPagina('landingPage'));
+    function enviarEmail() {
+      const email = document.getElementById('emailInput').value;
+      const status = document.getElementById('mensagemStatus');
 
-    const slides = [
-      {
-        title: "Lorem Ipsum",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et nisi nec justo finibus tempor."
-      },
-      {
-        title: "dolor sit",
-        text: " Curabitur et nisi nec justo finibus tempor."
-      },
-      {
-        title: "amet",
-        text: " consectetur adipiscing elit."
+      if (!validarEmail(email)) {
+        status.textContent = "Por favor, insira um e-mail válido.";
+        status.classList.remove("text-green-400");
+        status.classList.add("text-red-400");
+        return false;
       }
-    ];
 
-    function changeSlide(index) {
-      document.getElementById("carousel-title").innerText = slides[index].title;
-      document.getElementById("carousel-text").innerText = slides[index].text;
+      status.textContent = "E-mail enviado com sucesso!";
+      status.classList.remove("text-red-400");
+      status.classList.add("text-green-400");
 
-      const buttons = document.querySelectorAll(".carousel-btn");
-      buttons.forEach((btn, i) => {
-        btn.classList.toggle("bg-vermelhoEscuro", i === index);
-        btn.classList.toggle("bg-gray-400", i !== index);
-      });
+      document.getElementById('emailInput').value = "";
+      return false;
     }
   </script>
 
