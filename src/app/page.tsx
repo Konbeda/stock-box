@@ -35,35 +35,35 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Header */}
       <header className="fixed w-full bg-[#1F1F1F] shadow-lg z-50">
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto px-6 py-1">
           <div className="flex justify-between items-center">
             {/* Logo and Company Name */}
-            <div className="flex items-center space-x-3">
-              <div className="w-15 h-15 rounded-full bg-white/10 flex items-center justify-center">
-                <Image
-                  src="/logo_nav.png"
-                  alt="Stock in Box Logo"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                  priority
-                />
-              </div>
+            <div className="flex items-center">
+               <div className="w-[140px] h-[140px] flex items-center justify-center">
+                 <Image
+                   src="/logo_nav.png"
+                   alt="Stock in Box Logo"
+                   width={140}
+                   height={140}
+                   className="object-contain"
+                   priority
+                 />
+               </div>
             </div>
 
             {/* Social Icons */}
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-6">
               <a href="#" className="text-white/80 hover:text-[#E4405F] transition-colors">
-                <FaInstagram size={32} />
+                <FaInstagram size={40} />
               </a>
               <a href="#" className="text-white/80 hover:text-[#1877F3] transition-colors">
-                <FaFacebook size={32} />
+                <FaFacebook size={40} />
               </a>
               <a href="#" className="text-white/80 hover:text-[#0A66C2] transition-colors">
-                <FaLinkedin size={32} />
+                <FaLinkedin size={40} />
               </a>
-              <a href="#" className="text-white/80 hover:text-[#25D366] transition-colors">
-                <FaWhatsapp size={32} />
+              <a href="https://wa.me/5511978000271" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#25D366] transition-colors">
+                <FaWhatsapp size={40} />
               </a>
             </div>
 
@@ -108,7 +108,7 @@ export default function Home() {
       {/* Nossos Serviços Section with Modals */}
       <section className="py-32 px-4 md:px-12 lg:px-20 bg-[#78aeea]">
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20" style={{ color: '#003366' }}>Nossos Serviços</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-left mb-20 text-black">Nossos Serviços</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {services.map((service, idx) => (
               <button
