@@ -10,21 +10,24 @@ const services = [
     image: '/card1.jpeg',
     modalImage: '/card1.jpeg',
     description: 'Serviço ágil e seguro.',
-    modalText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.`
+    modalText: `Desenvolvemos projetos de padronização e otimização de espaços que transformam completamente a eficiência do seu negócio. Nossa abordagem focada em praticidade e organização resulta em um ambiente de trabalho mais produtivo para seus colaboradores e uma experiência mais agradável para seus clientes. Com layouts inteligentes e espaços bem planejados, reduzimos significativamente as rupturas de estoque e melhoramos a fluidez das operações em loja.`,
+    modalImages: ['/card1.jpeg', '/card2.jpeg', '/card3.jpeg']
   },
   {
     title: 'Fácil Comunicação',
     image: '/card2.jpeg',
     modalImage: '/card2.jpeg',
     description: 'Atendimento facilitado e suporte contínuo.',
-    modalText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.`
+    modalText: `Nossa solução de comunicação integrada facilita o atendimento aos clientes e aumenta a eficiência dos colaboradores. Com sistemas intuitivos e processos bem definidos, garantimos que sua equipe possa focar no que realmente importa: proporcionar a melhor experiência possível para seus clientes. A comunicação clara e eficiente entre todos os setores resulta em um serviço mais ágil e satisfatório.`,
+    modalImages: ['/card2.jpeg', '/card1.jpeg', '/card3.jpeg']
   },
   {
     title: 'Compromisso',
     image: '/card3.jpeg',
     modalImage: '/card3.jpeg',
     description: 'Com sua necessidade e seu tempo.',
-    modalText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.`
+    modalText: `Nosso maior compromisso é com a otimização dos seus recursos. Trabalhamos para reduzir significativamente os custos financeiros e o tempo investido em processos operacionais, beneficiando tanto sua empresa quanto seus clientes. O resultado é uma operação mais ágil, com processos otimizados que geram economia de recursos e aumento da produtividade. Nossa solução completa garante que você alcance o equilíbrio perfeito entre eficiência operacional e satisfação do cliente.`,
+    modalImages: ['/card3.jpeg', '/card1.jpeg', '/card2.jpeg']
   }
 ];
 
@@ -82,13 +85,13 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/card1.jpeg"
+            src="/bg_hero.jpeg"
             alt="Hero Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90" />
         </div>
 
         {/* Content */}
@@ -136,7 +139,7 @@ export default function Home() {
         {/* Modal */}
         {openModal !== null && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-            <div className="bg-white rounded-[10px] shadow-2xl w-full max-w-2xl p-8 relative animate-fade-in">
+            <div className="bg-white rounded-[10px] shadow-2xl w-full max-w-4xl p-8 relative animate-fade-in max-h-[90vh] overflow-y-auto">
               <button
                 className="absolute top-4 right-4 text-2xl text-gray-400 hover:text-gray-700 focus:outline-none transition-colors"
                 onClick={() => setOpenModal(null)}
@@ -144,16 +147,22 @@ export default function Home() {
               >
                 ×
               </button>
-              <h3 className="text-2xl font-bold mb-6" style={{ color: '#003366' }}>{services[openModal].title}</h3>
-              <div className="w-full aspect-[16/9] relative mb-6 rounded-lg overflow-hidden">
-                <Image
-                  src={services[openModal].modalImage}
-                  alt={services[openModal].title}
-                  fill
-                  className="object-cover"
-                />
+              <h3 className="text-3xl font-bold mb-8" style={{ color: '#003366' }}>{services[openModal].title}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {services[openModal].modalImages.map((image, index) => (
+                  <div key={index} className="aspect-[4/3] relative rounded-lg overflow-hidden">
+                    <Image
+                      src={image}
+                      alt={`${services[openModal].title} - Imagem ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
               </div>
-              <p className="text-base leading-relaxed" style={{ color: '#333' }}>{services[openModal].modalText}</p>
+              <div className="prose max-w-none">
+                <p className="text-lg leading-relaxed" style={{ color: '#333' }}>{services[openModal].modalText}</p>
+              </div>
             </div>
           </div>
         )}
@@ -161,7 +170,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-24 bg-[#232323] text-white">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-16">
+        <div className="container mx-auto px-4 md:pl-48 flex flex-col md:flex-row items-center justify-center gap-32 relative z-10">
           <div className="md:w-1/2 flex justify-center">
             <Image
               src="/logo.jpeg"
@@ -192,7 +201,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative bg-[#14235A] bg-[url('/footer_background.png')] bg-cover bg-center py-24 overflow-hidden">
         <div className="absolute inset-0 bg-[#14235A]/40 pointer-events-none" />
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-16 relative z-10">
+        <div className="container mx-auto px-4 md:pl-48 flex flex-col md:flex-row items-center justify-center gap-16 relative z-10">
           <div className="md:w-1/3 flex justify-center">
             <Image
               src="/footer_img.jpeg"
@@ -204,23 +213,29 @@ export default function Home() {
             />
           </div>
           <div className="md:w-2/3 flex flex-col items-center md:items-start">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center md:text-left">
-              Receba novidades e atualizações
-            </h2>
-            <form className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-md">
-              <input
-                type="email"
-                placeholder="E-MAIL"
-                className="flex-1 px-6 py-4 rounded-full text-gray-900 text-lg outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-[#B5432A] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#a13a22] transition-colors text-lg"
-              >
-                Enviar
-              </button>
-            </form>
+            <div className="flex flex-col items-center md:items-start">
+              <h2 className="text-4xl font-bold text-white mb-8">Fale conosco</h2>
+              <div className="flex items-center space-x-8">
+                <a href="#" className="text-white/80 hover:text-[#E4405F] transition-colors">
+                  <FaInstagram size={60} />
+                </a>
+                <a href="#" className="text-white/80 hover:text-[#1877F3] transition-colors">
+                  <FaFacebook size={60} />
+                </a>
+                <a href="#" className="text-white/80 hover:text-[#CCAAAA] transition-colors">
+                  <FaLinkedin size={60} />
+                </a>
+                <a href="https://wa.me/5511978000271" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#25D366] transition-colors">
+                  <FaWhatsapp size={60} />
+                </a>
+              </div>
+            </div>
           </div>
+        </div>
+        <div className="w-full text-center mt-16 relative z-10 md:pl-48">
+          <p className="text-white/80 text-sm">
+            © {new Date().getFullYear()} Stock in Box. Todos os direitos reservados.
+          </p>
         </div>
       </footer>
     </main>
