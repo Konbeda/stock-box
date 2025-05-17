@@ -17,7 +17,7 @@ const services = [
     title: 'Fácil Comunicação',
     image: '/card2.jpeg',
     modalImage: '/card2.jpeg',
-    description: 'Atendimento facilitado e suporte contínuo.',
+    description: 'Atendimento facilitado e suporte contínuo.Atendimento facilitado e suporte contínuo.Atendimento facilitado e suporte contínuo.Atendimento facilitado e suporte contínuo.',
     modalText: `Nossa solução de comunicação integrada facilita o atendimento aos clientes e aumenta a eficiência dos colaboradores. Com sistemas intuitivos e processos bem definidos, garantimos que sua equipe possa focar no que realmente importa: proporcionar a melhor experiência possível para seus clientes. A comunicação clara e eficiente entre todos os setores resulta em um serviço mais ágil e satisfatório.`,
     modalImages: ['/card2.jpeg', '/card1.jpeg', '/card3.jpeg']
   },
