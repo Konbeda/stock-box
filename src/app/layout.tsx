@@ -5,8 +5,11 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Stock Box',
-  description: 'Sistema de gerenciamento de estoque',
+  title: 'Stock in Box',
+  description: 'Soluções em gestão de estoque e padronização de lojas',
+  icons: {
+    icon: '/logo_nav.png',
+  },
 }
 
 export default function RootLayout({
